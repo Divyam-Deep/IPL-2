@@ -1,4 +1,4 @@
-from idlelib.configdialog import font_sample_text
+# from idlelib.configdialog import font_sample_text  # Remove or comment out this line
 
 import streamlit as st
 import pickle
@@ -26,26 +26,8 @@ html, body {
     background-color: rgba(0, 0, 0, 0.5);  /* Add semi-transparent background for readability */
     color: white;
 }
-
 h1, h2 {
     text-shadow: 2px 2px 8px #000000; /* Apply black outline to the text */
-}
-
-/* Responsive font size for h1 (Title) */
-h1 {
-    font-size: 50px; /* Default font size for larger screens */
-}
-
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 35px; /* Smaller font size for medium screens (e.g., tablets) */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 30px; /* Even smaller font size for smaller screens (e.g., mobile phones) */
-    }
 }
 </style>
 '''
@@ -53,7 +35,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Title and heading styling
 st.markdown(
-    "<h1 style='text-align: center; color: black;'>🏏 IPL Win Predictor 🏏</h1>",
+    "<h1 style='text-align: center; font-size: 50px; color: black;'>🏏 IPL Win Predictor 🏏</h1>",
     unsafe_allow_html=True
 )
 
@@ -75,7 +57,8 @@ cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
           'Sharjah', 'Mohali', 'Bengaluru']
 
 # Load the trained model
-pipe = pickle.load(open('pipe.pkl', 'rb'))
+pipe = pickle.load(open(r'C:\Users\91882\PycharmProjects\IPL\pipe.pkl', 'rb'))
+
 # Input section with styling
 col1, col2 = st.columns(2)
 with col1:
@@ -129,8 +112,8 @@ if st.button('Predict Probability'):
     st.markdown(
         f"""
         <div style="text-align: center; margin-top: 30px;">
-            <h2 style="color: #FFD700; text-shadow: 2px 2px 5px #000000;">{batting_team}: {win_prob * 100:.2f}%</h2>
-            <h2 style="color: #FF6347; text-shadow: 2px 2px 5px #000000;">{bowling_team}: {loss_prob * 100:.2f}%</h2>
+            <h2 style="color: #FFD700; text-shadow: 4px 4px 5px #000000;">{batting_team}: {win_prob * 100:.2f}%</h2>
+            <h2 style="color: #FF6347; text-shadow: 4px 4px 5px #000000;">{bowling_team}: {loss_prob * 100:.2f}%</h2>
         </div>
         """,
         unsafe_allow_html=True

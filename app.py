@@ -57,7 +57,7 @@ cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
           'Sharjah', 'Mohali', 'Bengaluru']
 
 # Load the trained model
-pipe = pickle.load(open(r'C:\Users\91882\PycharmProjects\IPL\pipe.pkl', 'rb'))
+pipe = pickle.load(open('pipe.pkl', 'rb'))
 
 # Input section with styling
 col1, col2 = st.columns(2)

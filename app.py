@@ -35,7 +35,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Title and heading styling
 st.markdown(
-    "<h1 style='text-align: center; font-size: 50px; color: black;'>🏏 IPL Win Predictor 🏏</h1>",
+    "<h1 style='text-align: center; font-size: 30.5px; color: black;'>🏏 IPL Win Predictor 🏏</h1>",
     unsafe_allow_html=True
 )
 
